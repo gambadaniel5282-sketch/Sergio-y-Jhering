@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071f3d">
+<meta name="description" content="EcoVolt: conoce cómo la energía solar puede ayudar a hogares y pequeños negocios.">
+<title>EcoVolt — Energía que transforma</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+:root{--navy:#071f3d;--navy2:#0b315b;--blue:#1677c8;--cyan:#56d2e8;--pale:#eaf6ff;--ink:#132e49;--muted:#61758a;--white:#fff;--line:#dceaf5;--green:#2a9d78;--shadow:0 18px 50px rgba(7,31,61,.10)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{margin:0;background:#f7fbff;color:var(--ink);font-family:'DM Sans',Arial,sans-serif;line-height:1.65}
+a{color:inherit}
+.wrap{width:min(1120px,calc(100% - 42px));margin:auto}
+header{height:76px;position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid #dceaf5}
+nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.35rem Manrope,sans-serif;letter-spacing:-.8px;color:var(--navy)}
+.logo-mark{width:39px;height:39px;border-radius:13px;background:linear-gradient(145deg,#0b4f91,#1b9bca);display:grid;place-items:center;color:white;font-size:1.25rem;box-shadow:0 6px 16px #1677c833}
+.logo span span{color:var(--blue)}
+.links{display:flex;align-items:center;gap:25px}
+.links a{text-decoration:none;font-size:.91rem;font-weight:700;color:#39536c;transition:.2s}
+.links a:hover,.links a.active{color:var(--blue)}
+.links .nav-cta{background:var(--navy);color:white;padding:10px 17px;border-radius:999px}
+.menu-btn{display:none;border:0;background:var(--pale);color:var(--navy);border-radius:10px;padding:9px 12px;font-size:1.2rem}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 78% 24%,#1a6ca6 0,transparent 30%),linear-gradient(120deg,#061a34,#0b3765 62%,#087ca6);color:white;padding:88px 0 82px}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #ffffff17;border-radius:50%;width:520px;height:520px;right:-140px;top:-210px}
+.hero:after{width:390px;height:390px;right:-75px;top:-145px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative;z-index:1}
+.kicker{display:inline-flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:2px;font-size:.74rem;font-weight:800;color:#86e7f4}
+.kicker:before{content:"";width:24px;height:2px;background:var(--cyan)}
+h1,h2,h3{font-family:Manrope,'DM Sans',sans-serif;letter-spacing:-1px}
+h1{font-size:clamp(2.7rem,5.6vw,4.8rem);line-height:1.04;margin:17px 0 22px;max-width:660px}
+h1 em{font-style:normal;color:#70dff0}
+.hero-copy{max-width:560px;color:#d7eafa;font-size:1.08rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{border:0;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:999px;text-decoration:none;font:700 .94rem 'DM Sans',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 9px 24px #001b3540}
+.btn-light{background:white;color:var(--navy)}
+.btn-glass{border:1px solid #ffffff70;color:white;background:#ffffff0d}
+.btn-blue{background:var(--blue);color:white}
+.hero-visual{min-height:350px;display:grid;place-items:center;position:relative}
+.visual-card{width:min(100%,470px);padding:20px;border:1px solid #ffffff35;background:linear-gradient(145deg,#ffffff20,#ffffff08);border-radius:30px;box-shadow:0 25px 65px #00152d55;backdrop-filter:blur(9px)}
+.visual-card svg{display:block;width:100%}
+.float-note{position:absolute;bottom:4px;left:0;background:white;color:var(--navy);padding:12px 16px;border-radius:15px;box-shadow:var(--shadow);font-size:.84rem;font-weight:700}
+.float-note b{color:var(--green)}
+.trust-strip{background:white;border-bottom:1px solid var(--line)}
+.trust-inner{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 0;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;color:#49637b;font-size:.88rem;font-weight:700}
+.trust-item i{font-style:normal;font-size:1.2rem}
+section{padding:86px 0}
+.section-head{max-width:700px;margin-bottom:38px}
+.section-head.center{text-align:center;margin-left:auto;margin-right:auto}
+.section-head.center .kicker{justify-content:center}
+.section-head h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.13;color:var(--navy);margin:13px 0}
+.section-head p{color:var(--muted);font-size:1.02rem;margin:0}
+.problem-section{background:#eff7fd}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 8px 28px #092b5208;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.icon-box{width:52px;height:52px;border-radius:16px;background:linear-gradient(145deg,#e7f5ff,#d8f5fa);display:grid;place-items:center;font-size:1.55rem;margin-bottom:19px}
+.card h3{font-size:1.16rem;margin:0 0 8px;color:var(--navy);letter-spacing:-.3px}
+.card p{margin:0;color:var(--muted);font-size:.94rem}
+.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.solution-copy h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.12;color:var(--navy);margin:14px 0}
+.solution-copy>p{color:var(--muted)}
+.steps{list-style:none;padding:0;margin:25px 0}
+.steps li{display:flex;gap:14px;margin:17px 0;align-items:flex-start}
+.step-num{flex:0 0 34px;height:34px;border-radius:11px;background:var(--pale);color:var(--blue);display:grid;place-items:center;font-weight:800}
+.steps b{display:block;color:var(--navy);margin-bottom:2px}
+.steps span:last-child{color:var(--muted);font-size:.91rem}
+.diagram{background:linear-gradient(145deg,#eaf6ff,#f9fdff);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
+.diagram-label{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:14px;color:var(--muted);font-size:.82rem}
+.diagram-label strong{color:var(--navy)}
+.benefit-section{background:#eff7fd}
+.benefit-card{position:relative;overflow:hidden}
+.benefit-card:after{content:"";position:absolute;width:95px;height:95px;border-radius:50%;background:#eaf6ff;right:-35px;bottom:-42px}
+.note{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 18px;color:var(--muted);font-size:.85rem}
+.note strong{color:var(--navy)}
+.cta-band{padding:0 0 86px;background:#eff7fd}
+.cta-box{background:linear-gradient(115deg,#08284c,#0d5b91);border-radius:28px;padding:42px 45px;color:white;display:flex;align-items:center;justify-content:space-between;gap:25px;overflow:hidden;position:relative}
+.cta-box:after{content:"☀";position:absolute;right:28%;font-size:12rem;line-height:1;color:#ffffff0b;top:-30px}
+.cta-box h2{font-size:clamp(1.7rem,3vw,2.5rem);margin:0 0 8px;position:relative;z-index:1}
+.cta-box p{margin:0;color:#d5eafa;max-width:570px;position:relative;z-index:1}
+.cta-box .btn{position:relative;z-index:1;white-space:nowrap}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:38px;align-items:start}
+.contact-info h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;color:var(--navy);margin:13px 0}
+.contact-info p{color:var(--muted)}
+.contact-point{display:flex;gap:12px;align-items:center;margin:18px 0;color:#36536d;font-weight:700}
+.contact-point span:first-child{width:42px;height:42px;border-radius:13px;background:var(--pale);display:grid;place-items:center}
+form{background:white;border:1px solid var(--line);border-radius:23px;padding:28px;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:.86rem;font-weight:700;color:var(--navy);margin:12px 0 6px}
+input,select,textarea{width:100%;border:1px solid #d4e2ee;background:#fbfdff;border-radius:11px;padding:12px 13px;font:inherit;color:var(--ink);outline:none;transition:border .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1677c81a}
+textarea{min-height:105px;resize:vertical}
+form .btn{margin-top:17px}
+#formmsg{min-height:24px;color:var(--green);font-weight:700;font-size:.9rem}
+footer{background:#061a32;color:#c4d8e9;padding:34px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+footer .logo{color:white}footer .logo-mark{background:#ffffff18;box-shadow:none}
+.footer-small{font-size:.82rem;color:#91abc2}
+.backtop{color:#d9efff;text-decoration:none;font-weight:700;font-size:.88rem}
+@media(max-width:800px){
+ .links{display:none;position:absolute;top:75px;left:0;right:0;background:white;padding:18px 22px 22px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:15px}
+ .links.open{display:flex}.links .nav-cta{text-align:center}.menu-btn{display:block}
+ .hero{padding:66px 0}.hero-grid,.solution-grid,.contact-grid{grid-template-columns:1fr;gap:32px}.hero-visual{min-height:270px}.float-note{left:4px;bottom:-5px}
+ .cards{grid-template-columns:1fr}.cta-box{align-items:flex-start;flex-direction:column;padding:32px 25px}
+ section{padding:66px 0}
+}
+@media(max-width:520px){.wrap{width:min(100% - 30px,1120px)}.form-row{grid-template-columns:1fr;gap:0}.hero-visual{min-height:225px}.visual-card{padding:10px}.float-note{font-size:.75rem}.trust-inner{justify-content:flex-start}.trust-item{width:calc(50% - 10px);font-size:.78rem}form{padding:21px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+ <nav class="wrap">
+  <a class="logo" href="#inicio"><span class="logo-mark">☀</span><span>Eco<span>Volt</span></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <div class="links" id="navLinks">
+   <a href="#inicio">Inicio</a><a href="#problema">El problema</a><a href="#solucion">La solución</a><a href="#beneficios">Beneficios</a><a class="nav-cta" href="#contacto">Contáctanos ↗</a>
+  </div>
+ </nav>
+</header>
+<main>
+<section class="hero" id="inicio">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="kicker">Energía inteligente · Futuro sostenible</div>
+   <h1>Que el sol ilumine <em>nuevas posibilidades.</em></h1>
+   <p class="hero-copy">En EcoVolt creemos que la energía del futuro empieza aprovechando lo que la naturaleza nos ofrece. Conoce cómo los paneles solares pueden ayudar a hogares y pequeños negocios.</p>
+   <div class="actions"><a class="btn btn-light" href="#solucion">Descubre cómo funciona <span>→</span></a><a class="btn btn-glass" href="#beneficios">Ver beneficios</a></div>
+  </div>
+  <div class="hero-visual">
+   <div class="visual-card">
+    <svg viewBox="0 0 500 330" role="img" aria-label="Ilustración de paneles solares y el sol">
+     <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#78d8ee" stop-opacity=".35"/><stop offset="1" stop-color="#ffffff" stop-opacity=".04"/></linearGradient><linearGradient id="panel" x2="1" y2="1"><stop stop-color="#174d82"/><stop offset="1" stop-color="#092846"/></linearGradient></defs>
+     <circle cx="375" cy="75" r="48" fill="#ffdc78"/><g stroke="#ffdc78" stroke-width="5" stroke-linecap="round"><path d="M375 8V0M375 150v-8M308 75h-9M451 75h-9M328 28l-7-7M429 129l-7-7M422 28l7-7M321 129l7-7"/></g>
+     <path d="M0 238Q120 190 240 232T500 220V330H0Z" fill="#42b9a0" opacity=".7"/>
+     <path d="M34 226L293 181l125 99-282 47Z" fill="url(#panel)" stroke="#9ce7f1" stroke-width="5"/>
+     <path d="M91 216l63 102M153 205l64 102M216 194l64 102M279 184l63 102M57 253l294-51M83 280l293-51" stroke="#64d2e8" stroke-width="3"/>
+     <path d="M133 327l-10 3M374 291l13 31" stroke="#d6f4fa" stroke-width="8" stroke-linecap="round"/>
+     <path d="M20 174q33-32 67 0M282 145q29-28 58 0" fill="none" stroke="#fff" stroke-width="5" opacity=".8" stroke-linecap="round"/>
+     <path d="M0 0h500v330H0Z" fill="url(#sky)"/>
+    </svg>
+   </div>
+   <div class="float-note">☀ Energía renovable <b>para el mañana</b></div>
+  </div>
+ </div>
+</section>
+<div class="trust-strip"><div class="wrap trust-inner">
+ <div class="trust-item"><i>☀️</i> Fuente renovable</div><div class="trust-item"><i>🏡</i> Para hogares</div><div class="trust-item"><i>🏪</i> Para negocios</div><div class="trust-item"><i>🌎</i> Compromiso ambiental</div>
+</div></div>
+<section class="problem-section" id="problema">
+ <div class="wrap">
+  <div class="section-head center"><div class="kicker" style="color:#1677c8">01 · Entendemos el reto</div><h2>La energía es necesaria.<br>Usarla mejor también.</h2><p>En nuestra vida diaria dependemos de la electricidad. Por eso es importante buscar alternativas que ayuden a aprovechar los recursos y cuidar el entorno.</p></div>
+  <div class="cards">
+   <article class="card"><div class="icon-box">💡</div><h3>Consumo constante</h3><p>La iluminación, los electrodomésticos y los equipos necesitan electricidad todos los días.</p></article>
+   <article class="card"><div class="icon-box">🧾</div><h3>Gastos del hogar</h3><p>El consumo eléctrico puede representar una parte importante del presupuesto familiar o de un negocio.</p></article>
+   <article class="card"><div class="icon-box">🌍</div><h3>Cuidado del planeta</h3><p>Algunas formas tradicionales de producir electricidad generan emisiones que contribuyen al cambio climático.</p></article>
+  </div>
+ </div>
+</section>
+<section id="solucion">
+ <div class="wrap solution-grid">
+  <div class="solution-copy">
+   <div class="kicker" style="color:#1677c8">02 · Nuestra propuesta</div>
+   <h2>Convertimos la luz del sol en una oportunidad.</h2>
+   <p>EcoVolt propone acercar la tecnología de paneles solares a personas que quieren conocer una alternativa de generación eléctrica más limpia. Cada proyecto debe adaptarse al lugar y a las necesidades de consumo.</p>
+   <ol class="steps">
+    <li><span class="step-num">1</span><span><b>Evaluación</b><span>Revisar el espacio, la ubicación y el consumo de energía.</span></span></li>
+    <li><span class="step-num">2</span><span><b>Diseño del sistema</b><span>Seleccionar los paneles y equipos adecuados para cada caso.</span></span></li>
+    <li><span class="step-num">3</span><span><b>Instalación segura</b><span>Contar con personal capacitado para instalar y conectar el sistema.</span></span></li>
+    <li><span class="step-num">4</span><span><b>Uso y mantenimiento</b><span>Revisar los equipos para mantener su buen funcionamiento.</span></span></li>
+   </ol>
+   <a class="btn btn-blue" href="#contacto">Quiero saber más →</a>
+  </div>
+  <div class="diagram">
+   <svg viewBox="0 0 480 320" width="100%" role="img" aria-label="Diagrama del recorrido de la energía solar desde los paneles hasta la vivienda">
+    <circle cx="75" cy="70" r="34" fill="#ffd96c"/><g stroke="#e7b83c" stroke-width="4" stroke-linecap="round"><path d="M75 20V9M75 131v-11M25 70H14M136 70h-11M40 35l-8-8M118 113l-8-8M110 35l8-8M32 113l8-8"/></g>
+    <path d="M30 176l130-22 60 83-140 25Z" fill="#104b7b" stroke="#36a9d4" stroke-width="4"/><path d="M73 169l34 84M117 161l34 84M45 205l164-27M63 234l163-27" stroke="#9be8f4" stroke-width="3"/>
+    <path d="M230 210h45" stroke="#1677c8" stroke-width="5" stroke-linecap="round"/><path d="M263 197l15 13-15 13" fill="none" stroke="#1677c8" stroke-width="5"/>
+    <rect x="292" y="105" width="150" height="160" rx="12" fill="#fff" stroke="#1677c8" stroke-width="4"/><path d="M280 111l86-63 88 63" fill="#e0f1fc" stroke="#1677c8" stroke-width="5" stroke-linejoin="round"/>
+    <rect x="348" y="183" width="38" height="82" rx="4" fill="#d8efff" stroke="#1677c8" stroke-width="3"/><rect x="311" y="137" width="35" height="32" rx="4" fill="#d8efff" stroke="#1677c8" stroke-width="3"/><rect x="390" y="137" width="35" height="32" rx="4" fill="#d8efff" stroke="#1677c8" stroke-width="3"/>
+    <text x="111" y="300" font-size="17" font-weight="700" fill="#17324d" text-anchor="middle">Paneles solares</text><text x="366" y="300" font-size="17" font-weight="700" fill="#17324d" text-anchor="middle">Tu hogar</text>
+   </svg>
+   <div class="diagram-label"><span>☀ Captación de luz</span><strong>→ Electricidad</strong><span>🏠 Uso diario</span></div>
+  </div>
+ </div>
+</section>
+<section class="benefit-section" id="beneficios">
+ <div class="wrap">
+  <div class="section-head center"><div class="kicker" style="color:#1677c8">03 · El valor de EcoVolt</div><h2>Beneficios que miran al futuro.</h2><p>La energía solar puede aportar ventajas cuando el sistema está bien diseñado y se adapta a las condiciones de cada lugar.</p></div>
+  <div class="cards">
+   <article class="card benefit-card"><div class="icon-box">🌿</div><h3>Fuente renovable</h3><p>Utiliza la luz del sol, un recurso natural que se renueva continuamente.</p></article>
+   <article class="card benefit-card"><div class="icon-box">📉</div><h3>Posible ahorro</h3><p>Puede reducir parte de la energía que se compra de la red; el resultado depende del consumo y la instalación.</p></article>
+   <article class="card benefit-card"><div class="icon-box">🔋</div><h3>Más opciones</h3><p>Con los equipos apropiados, algunos sistemas pueden almacenar energía para utilizarla después.</p></article>
+  </div>
+  <div class="note"><strong>Una aclaración importante:</strong> los paneles solares no garantizan electricidad gratuita ni el mismo ahorro para todos. El costo, el clima, la ubicación, el consumo y el tipo de instalación influyen en los resultados.</div>
+ </div>
+</section>
+<div class="cta-band"><div class="wrap"><div class="cta-box"><div><h2>Un futuro más brillante empieza hoy.</h2><p>Conoce las posibilidades de la energía solar y descubre qué tipo de solución podría adaptarse a tu espacio.</p></div><a class="btn btn-light" href="#contacto">Hablemos de tu proyecto →</a></div></div></div>
+<section id="contacto">
+ <div class="wrap contact-grid">
+  <div class="contact-info">
+   <div class="kicker" style="color:#1677c8">04 · Estamos para ayudarte</div>
+   <h2>¿Te interesa la energía solar?</h2>
+   <p>Déjanos tus datos y cuéntanos qué información necesitas. Este formulario es una demostración del prototipo EcoVolt.</p>
+   <div class="contact-point"><span>✉️</span><span>Formulario de contacto</span></div>
+   <div class="contact-point"><span>🏡</span><span>Soluciones para hogares y negocios</span></div>
+   <div class="contact-point"><span>☀️</span><span>Información clara sobre energía solar</span></div>
+  </div>
+  <form id="contactForm">
+   <div class="form-row"><div><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required></div><div><label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" autocomplete="email" placeholder="tunombre@correo.com" required></div></div>
+   <label for="tipo">¿Para qué necesitas información?</label><select id="tipo" name="tipo"><option>Paneles solares para mi hogar</option><option>Paneles solares para mi negocio</option><option>Quiero aprender cómo funcionan</option><option>Otra consulta</option></select>
+   <label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" placeholder="Escribe aquí tu consulta..."></textarea>
+   <button class="btn btn-blue" type="submit">Enviar solicitud <span>→</span></button>
+   <p id="formmsg" role="status" aria-live="polite"></p>
+   <p class="footer-small">Demostración escolar: los datos no se envían ni se guardan en un servidor.</p>
+  </form>
+ </div>
+</section>
+</main>
+<footer><div class="wrap footer-inner">
+ <a class="logo" href="#inicio"><span class="logo-mark">☀</span><span>Eco<span>Volt</span></span></a>
+ <div class="footer-small">La energía del sol, el poder de cambiar. · Prototipo educativo 2026</div>
+ <a class="backtop" href="#inicio">Volver arriba ↑</a>
+</div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰';});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+document.getElementById('contactForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('nombre').value.trim();
+ document.getElementById('formmsg').textContent='¡Gracias, '+name+'! Tu solicitud de demostración se registró correctamente en esta página.';
+ this.reset();
+});
+const sections=[...document.querySelectorAll('main section[id]')];
+const navAnchors=[...navLinks.querySelectorAll('a[href^="#"]')];
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){navAnchors.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>observer.observe(s));}
+</script>
+</body>
+</html>
